@@ -7,9 +7,6 @@
 	add_filter( 'language_attributes', 'ng_app', 100 );
 	function theme_setup() {
 		add_theme_support( 'custom-logo' );
-		register_nav_menus([
-			'products_navigation' => __('Menu mobili', 'sprfc')
-		]);
 	}
 	
 	add_action('after_setup_theme', 'theme_setup');
@@ -99,6 +96,9 @@
 
 	function cc_mime_types( $mimes ){
 		$mimes['svg'] = 'image/svg+xml';
+		$mimes['ogg'] = 'video/ogg';
+		$mimes['ogv'] = 'video/ogv';
+		
 		return $mimes;
 	}
 	add_filter( 'upload_mimes', 'cc_mime_types' );
